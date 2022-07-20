@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap');
+
+body div section {
+    /* padding: 100px; */
+    margin: 20px 10%;
+}
+
+/* navbar style */
+.navbar {
+    background-color: white;
+    margin: auto;
+    width: auto;
+    height: fit-content;
+    box-shadow: 1px 1px 6px #d3cfc9;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.container-fluid {
+    width: 90% !important;
+    height: 50px;
+    zoom: 1;
+    padding: 0 auto;
+    margin: 0 auto;
+    position: relative;
+    flex-wrap: nowrap !important;
+}
+
+.navbar-brand {
+    display: flex;
+    width: 80%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+nav div div img {
+    height: 50px;
+}
+
+.nav-title {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-title1 {
+    font-family: 'Ceviche One', cursive;
+    color: rgb(46, 93, 155);
+    font-size: 50px;
+    max-height: 50px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar-toggler-icon {
+    background-image: url(./data/logo/aligniconjustify-150x150.png);
+}
+
+.dropdown .nav-link {
+    margin-right: 0 !important;
+}
+
+@media all and (min-width: 992px) {
+    #navbarNav {
+        background-color: transparent;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        align-items: flex-start;
+        margin-left: -200px;
+    }
+
+    .dropdown:hover #dropdown-sport {
+        margin: 0px;
+    }
+
+}
+
+@media all and (max-width: 992px) {
+    .navbar-toggler {
+        position: fixed;
+    }
+
+    .navbar-toggler:hover .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        align-items: flex-start;
+        margin-left: 0px;
+    }
+
+    .navbar-collapse {
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        text-align: right;
+        width: fit-content !important;
+        max-height: 150px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        align-items: flex-start;
+        margin-left: 0px;
+    }
+}
+
+@media all and (max-width: 595px) {
+    nav div div p span {
+        font-family: 'Ceviche One', cursive;
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 320px) {}
+
+
+
+
+/* carousel---------------------------------------- */
+/* ________________________________________________________________________________ */
+.container-demo {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px;
+  }
+  
+  .carousel-demo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    animation: rotate360 60s infinite forwards linear;
+  }
+  .carousel__face { 
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+    display: flex;
+  }
+  
+  span {
+    margin: auto;
+    font-size: 2rem;
+  }
+  
+  
+  .carousel__face:nth-child(1) {
+    background-image: url(./data/image-carousel/1.jpg);
+    transform: rotateY(  0deg) translateZ(430px); }
+  .carousel__face:nth-child(2) { 
+    background-image: url(./data/image-carousel/2.jpg);
+      transform: rotateY( 40deg) translateZ(430px); }
+  .carousel__face:nth-child(3) {
+    background-image: url(./data/image-carousel/3.jpg);
+    transform: rotateY( 80deg) translateZ(430px); }
+  .carousel__face:nth-child(4) {
+    background-image: url(./data/image-carousel/4.jpg);
+    transform: rotateY(120deg) translateZ(430px); }
+  .carousel__face:nth-child(5) { 
+    background-image: url(./data/image-carousel/5.jpg);
+   transform: rotateY(160deg) translateZ(430px); }
+  .carousel__face:nth-child(6) { 
+    background-image: url(./data/image-carousel/6.jpg);
+   transform: rotateY(200deg) translateZ(430px); }
+  .carousel__face:nth-child(7) { 
+    background-image: url(./data/image-carousel/7.jpg);
+   transform: rotateY(240deg) translateZ(430px); }
+  .carousel__face:nth-child(8) {
+    background-image: url(./data/image-carousel/8.jpg);
+    transform: rotateY(280deg) translateZ(430px); }
+  .carousel__face:nth-child(9) {
+    background-image: url(./data/image-carousel/9.jpg);
+    transform: rotateY(320deg) translateZ(430px); }
+  
+  
+  
+  @keyframes rotate360 {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+  
+
+/* ___________________________________________________________________________________ */
+
+.main-welcome{
+}
+
+#home-carousel{
+    z-index: 1;
+    position: relative;
+}
+
+.carousel-bg{
+    /* z-index: 0; */
+    /* position: absolute; */
+    left: -50px;
+    top: -300px;
+    opacity: 0.5;
+}
+.carousel-bg img{
+width: 120vw !important;
+height: 600px;
+overflow:hidden;
+}
+
+/* Make the image fully responsive */
+.carousel-inner img {
+    height: 300px;
+    width: auto;
+    margin: 10px auto auto auto;
+    border: 1px black solid;
+    border-radius: 20px;
+}
+
+#home-carousel .carousel-indicators li {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    opacity: 0.2;
+}
+
+#home-carousel .carousel-indicators li.active {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    opacity: 1;
+    border: 1px solid black;
+}
+
+#home-carousel .carousel-indicators li:hover {
+    opacity: 0.5;
+    box-shadow: 1px 2px 10px rgb(252, 9, 9);
+}
+
+/* section about---------------------------------------- */
+.tw {
+    color: rgb(18, 56, 105);
+    font-family: 'Ceviche One', cursive;
+    font-size: larger;
+}
+
+.div-about {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sect-about {
+    grid-column: 1/2;
+    margin-right: 0;
+}
+
+.logo-about {
+    grid-column: 2/3;
+    background-image: url(./data/logo/logo-original941x1147-transp.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 0;
+}
+
+
+section p span {
+    font-family: 'Ceviche One', cursive;
+    font-size: 25px;
+}
+
+/* section sport ________________________________________*/
+[class^="sect-"] h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 5vw;
+    margin-top: 40px;
+}
+
+
+.sect-sport div div img {
+    background-color: aquamarine;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-bottom: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.644);
+}
+
+
+[class^="sect-"] button {
+    font-size: 2vw;
+    align-items: flex-end;
+    color: azure;
+    background-color: rgb(18, 56, 105);
+    border-radius: 10px;
+    justify-self: end;
+}
+
+#carousel-sport .carousel-indicators {
+    position: static;
+    width: 100%;
+    margin-left: auto;
+}
+
+#carousel-sport li {
+    height: 50px;
+    width: 50px;
+    border: 1px black solid;
+    opacity: 0.5;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#carousel-sport li img {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+}
+
+#carousel-sport li.active {
+    opacity: 1;
+}
+
+
+/* section industrie */
+div div a img {
+    width: 100%;
+    height: auto;
+}
+
+.img-container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.img-container:hover .image {
+    opacity: 0.5;
+}
+
+.img-container:hover {
+    border: 4px blue solid;
+}
+
+.img-container:hover .middle {
+    opacity: 1;
+}
+
+/* .img-container:active .image {
+    transform: scale(2);
+    opacity: 1; 
+} */
+
+.text {
+    background-color: #3f4aa88c;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    width: fit-content;
+    margin: 0;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+/* décoration __________________ */
+
+.mask1 {
+    -webkit-mask-image: url(./data/logo/logo-original941x1147-transp.png);
+    mask-image: url(./data/image-deco/logo-original-h500-transp.png);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    margin: 0% 33%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+#carousel-deco img {
+    margin: 0;
+    padding: 0;
+}
+
+.liens-deco {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+[id^="header-"] {
+    font-size: 20px;
+    border: 1px rgb(0, 26, 255) solid;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.liens-deco button {
+    background-color: rgb(112, 112, 250);
+    height: 35px;
+    font-size: 15px;
+}
+
+/* footer ----------------- */
+.footer-class {
+    margin-top: 30px;
+}
+
+.social-media-logo {
+    margin: auto;
+}
+
+footer .tw {
+    font-size: 30px;
+}
+
+.social-media-logo i>img {
+    margin: 0 20px;
+}
+
+.btn-sport {
+    background-color: rgb(132, 132, 255);
+    border: none;
+}
+
+.btn-sport:hover {
+    background-color: blue;
+}
+
+/* boutique sport -------------------------------- */
+.container-fluid .cart img {
+height: 30px;
+}
+@media screen and (max-width: 880px) {
+    .nav-title {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .nav-title {
+        display: none;
+    }
+
+    .container-fluid .cart h6{
+        display: none;
+    }
+    .search {
+        height: 30px;
+    }
+}
+
+.sport-welcome {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    height: 320px;
+}
+
+[class^="welcome-"] {
+    margin: 10px 5px;
+    display: flex;
+    height: auto;
+    width: auto;
+}
+
+.sport-welcome .carousel-indicators  li.active{
+    box-shadow: 1px 1px 5px rgb(0, 0, 255  );
+}
+
+/* welcome left */
+.welcome-left {
+    /* border: 1px solid black; */
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.welcome-left div {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 2%;
+    color: rgb(99, 97, 97);
+    /* border-left: none;
+    border-right: none; */
+}
+
+.welcome-left img{
+    width:40px;
+    height: 40px;
+}
+
+/* welcome center */
+
+.sport-welcome .welcome-center .carousel-inner img{
+    height: 310px;
+    border: none;
+}
+
+.sport-welcome .carousel-indicators  li{
+    height: 5px;
+    border-radius: 25%;
+    background-color: rgb(230, 230, 230);
+}
+
+/* welcome right */
+
+.welcome-right .carousel-inner {
+    width:100%;
+    height: 100%;
+    display: flex;
+align-items: center;
+}
+
+.welcome-right img {
+    width: 100%;
+    height:auto;
+}
+
+.sport-welcome .carousel-indicators {
+    padding: 0;
+    margin: 0;
+    align-items: flex-end;
+    height: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .sport-welcome {
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: auto 200px;
+    }
+    
+    /* welcome left */
+    .welcome-left {
+        border: 1px solid black;
+        margin: 10px 5px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    
+    .welcome-left div {
+        background-color: rgb(255, 255, 255);
+        border: inherit ;
+    }
+    
+    .welcome-left img{
+        width:40px;
+        height: 40px;
+    }
+    
+    /* welcome center */
+    
+    .sport-welcome .welcome-center .carousel-inner img{
+        height: 200px;
+        border: none;
+    }
+    
+    .sport-welcome .carousel-indicators  li{
+        height: 5px;
+        border-radius: 25%;
+        background-color: rgb(230, 230, 230);
+    }
+    
+    .sport-welcome .carousel-indicators  li.active{
+        box-shadow: 1px 1px 5px rgb(0, 0, 255  );
+    }
+    
+    /* welcome right */
+    
+    .welcome-right .carousel-inner {
+        display: none;
+    }
+    
+
+
+}

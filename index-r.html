@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles-R.css">
-
-
-
 </head>
 
 
@@ -30,48 +27,38 @@
                     <p class="nav-title1">TWEMMAN</p>
                 </div>
             </div>
-            <!-- Toggler/collapsibe Button -->
- <!-- --------------------------------------------------------------------- -->
-            <div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse sticky" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <div class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                            style=" margin-right:10px;">Sport
-                            </a>
-                            <ul class="dropdown-menu" id="dropdown-sport">
-                                <li><a class="dropdown-item" href="./boutique.html" >Boutique en ligne</a></li>
-                            </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Industrie</a>
-                        </li>
-                        <li>
-                            <div class="nav-item dropdown ">
-                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                    style=" margin-right:10px;">Decoration
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Nos Produits Standards</a></li>
-                                    <li><a class="dropdown-item" href="#">Article en découpe plasma</a></li>
-                                    <li><a class="dropdown-item" href="#">Cherchez-vous un autre produits ?</a></li>
-                                </ul>
-
-                            </div>
-                        </li>
-                    </ul>
+            <!--------------------------------------------------------------------------------->
+            <!-- collapsible navbar __________________________ -->
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div id="menu-navbar">
+                    <a class="nav-link active" aria-current="page" href="#id-div-about">Home</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link" href="#id-div-sport" role="button" data-bs-toggle="dropdown" style=" margin-right:10px;">Sport
+                        </a>
+                        <ul class="dropdown-menu" id="dropdown-sport">
+                            <li>
+                                <a class="dropdown-item" href="./boutique.html">Boutique en ligne</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="nav-link" href="#id-div-industrie">Industrie</a>
+                    <div class="dropdown ">
+                        <a class="nav-link" href="#div-deco" role="button" data-bs-toggle="dropdown"
+                            style=" margin-right:10px;">Decoration
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./boutique-deco.html">Produits Standards</a></li>
+                            <li><a class="dropdown-item" data-toggle="modal" data-target="#atelier-decoupe-modal" href="#">Découpe
+                                    plasma</a></li>
+                            <li><a class="dropdown-item" data-toggle="modal" data-target="#exprimez-vous-modal" href="#">Autre
+                                    produits</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <span id="mySidenavLogo" style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <!-- fin collapsible navbar __________________________ -->
         </div>
     </nav>
     <!-- section carroussel -->
@@ -90,43 +77,9 @@
             </div>
         </div>
     </section>
-    <section class="main-welcome">
-        <div id="home-carousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#home-carousel" data-slide-to="1"></li>
-                <li data-target="#home-carousel" data-slide-to="2"></li>
-                <li data-target="#home-carousel" data-slide-to="3"></li>
-                <li data-target="#home-carousel" data-slide-to="4"></li>
-                <li data-target="#home-carousel" data-slide-to="5"></li>
-            </ul>
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-1000" src="./data/image-carousel/1.jpg" alt="First slide" id="carsl-1">
-                </div>
-                <div class="carousel-item ">
-                    <img class="d-block w-1000" src="./data/image-carousel/2.jpg" alt="Second slide" id="carsl-2">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-1000" src="./data/image-carousel/3.jpg" alt="Third slide" id="carsl-3">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-1000" src="./data/image-carousel/4.jpg" alt="Fourth slide" id="carsl-4">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-1000" src="./data/image-carousel/5.jpg" alt="Fifth slide" id="carsl-5">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-1000" src="./data/image-carousel/6.jpg" alt="Sixth slide" id="carsl-6">
-                </div>
-            </div>
-        </div>
-    </section>
     <hr />
     <!-- section about -->
-    <div class="div-about">
+    <div id="id-div-about" class="div-about">
         <section class="sect-about">
             <h1>C'est quoi <span class="tw">TWEMMAN</span> ?</h1>
             <p> <span>TWEMMAN</span> est l'acronyme de <span>T</span>unisian <span>W</span>orkshop for
@@ -146,9 +99,9 @@
     </div>
     <hr />
     <!-- section sport -->
-    <div class="div-sport">
+    <div id="id-div-sport" class="div-sport">
         <section class="sect-sport">
-            <h1><span class="tw">TWEMMAN</span>. SPORT</h1>
+            <h1><span class="tw">TWEMMAN</span>.SPORT</h1>
             <p>Depuis 2016, nous faisons la conception de nos propres modèles de matériel de sport.</p>
             <p>Nous produisons principalement des bancs (plats, et ajustables, pliables, etc..), et des supports de
                 barres (monoblocs et séparés, réglables en hauteur ou fixe, pour squat ou seulment pour développé).</p>
@@ -203,7 +156,7 @@
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a href="./boutique.html">
-                <button class="btn btn-primary" type="button" >Aller à la boutique</button>
+                    <button class="btn btn-primary" type="button">Aller à la boutique</button>
                 </a>
             </div>
 
@@ -213,9 +166,9 @@
     <hr />
 
     <!-- section industrie -->
-    <div class="div-industrie">
+    <div id="id-div-industrie" class="div-industrie">
         <section class="sect-industrie">
-            <h1><span class="tw">TWEMMAN</span>. INDUSTRIE</h1>
+            <h1><span class="tw">TWEMMAN</span>.INDUSTRIE</h1>
             <p>TWEMMAN est aussi une entreprise concevant des diverses structures en métal.
                 Nous réalisons des travaux de métallerie depuis des années ce qui a fait de notre équipe des experts
                 ouvrages en fer.
@@ -224,8 +177,8 @@
                 TWEMMAN est en mesure de répondre aux demandes et besoins en constructions et structures
                 métalliques pour tous types d'articles.
             </p>
-            <p> Notre expertise permet de répondre à des besoins spécifiques et complexes pour les clients issus
-                de secteurs d’activités diverses</p>
+            <p> Notre expertise permet de répondre à des besoins spécifiques et complexes pour les clients issus de
+                secteurs d’activités diverses</p>
             <div class="row">
                 <div class="col-md-4 img-thumbnail img-container">
                     <a>
@@ -234,7 +187,6 @@
                             <div class="text">l'utilisation des la charpente métallique dans la constrution des maisons
                                 est devenu très fréquente </div>
                         </div>
-                        <caption>constructions métallique moderne</caption>
                     </a>
                 </div>
                 <div class="col-md-4 img-thumbnail img-container">
@@ -243,8 +195,6 @@
                         <div class="middle">
                             <div class="text">construction d'une hangard de 500m²</div>
                         </div>
-
-                        <caption>charpente métallique</caption>
                     </a>
                 </div>
                 <div class="col-md-4 img-thumbnail img-container">
@@ -253,8 +203,6 @@
                         <div class="middle">
                             <div class="text">chantier des travaux en sous traitance</div>
                         </div>
-
-                        <caption>tuyauterie</caption>
                     </a>
                 </div>
                 <div class="col-md-4 img-thumbnail img-container">
@@ -263,8 +211,6 @@
                         <div class="middle">
                             <div class="text">chantier des travaux en sous traitance</div>
                         </div>
-
-                        <caption>chaudronnerie de précision</caption>
                     </a>
                 </div>
                 <div class="col-md-4 img-thumbnail img-container">
@@ -273,8 +219,6 @@
                         <div class="middle">
                             <div class="text">chantier des travaux en sous traitance</div>
                         </div>
-
-                        <caption>modification et extension</caption>
                     </a>
                 </div>
                 <div class="col-md-4 img-thumbnail img-container">
@@ -283,8 +227,6 @@
                         <div class="middle">
                             <div class="text">chantier des travaux en sous traitance</div>
                         </div>
-
-                        <caption>plateforme</caption>
                     </a>
                 </div>
             </div>
@@ -295,7 +237,6 @@
                     Contactez-nous
                 </button>
             </div>
-
             <!-- The Modal -->
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-dialog-centered">
@@ -306,7 +247,6 @@
                             <h4 class="modal-title">Contactez-nous</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
-
                         <!-- Modal body -->
                         <div class="modal-body">
                             <form action="#">
@@ -333,7 +273,7 @@
                                 <br>
                                 <br>
 
-                                <textarea name="message" rows="10" cols="50" placeholder="votre message ici"></textarea>
+                                <textarea name="message" rows="5" cols="40" placeholder="votre message ici"></textarea>
                                 <br>
                                 <input type="submit" value="Submit">
                                 <input type="reset" value="Reset">
@@ -348,7 +288,7 @@
     <hr />
 
     <!-- partie décoration ------------------------------------------------------------------ -->
-    <div class="div-deco">
+    <div class="div-deco" id="div-deco">
         <section class="sect-deco">
             <h1><span class="tw">TWEMMAN</span>. DECO</h1>
             <div class="mask1">
@@ -372,10 +312,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-                <!-- <img src="./data/image-deco/metal-texture.jpg" alt="bg-metal" width="100%" height="250px"> -->
             </div>
             <div>
                 <p>
@@ -386,31 +322,117 @@
                     intérieur ou un grand plateau en zinc à apprivoiser... Et vous, quelle envie déco aujourd'hui?
                 </p>
             </div>
-            <div class="liens-deco container-fluid">
-                <div>
-                    <div data-toggle="collapse" id="header-deco1" data-target="#demo1">Produits Standards</div>
-                    <div id="demo1" class="collapse">
-                        Lorem ipsum dolor text....
-                        <button>Boutique Deco</button>
+            <div class="card-columns">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <p class="card-text">Découvrez la liste de nos produits Standards , la meilleure qualité avec un
+                            prix
+                            excellent</p>
+                        <a href="./boutique-deco.html" class="btn btn-primary stretched-link">Boutique Déco</a>
                     </div>
                 </div>
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <p class="card-text">Découvrez la liste de nos produits en découpe plasma. envoyez nous le motif
+                            que vous voulez
+                            et laissez le reste à nos experts.
+                        </p>
+                        <a class="btn btn-primary stretched-link" data-toggle="modal"
+                            data-target="#atelier-decoupe-modal">Atelier de découpe</a>
 
-                <div>
-                    <div data-toggle="collapse" id="header-deco2" data-target="#demo2">Decoupe numérique</div>
-                    <div id="demo2" class="collapse">
-                        Lorem ipsum dolor text....
-                        <button>Atelier de découpe</button>
+                        <!-- The exprimez-vous Modal -->
+                        <div class="modal fade" id="atelier-decoupe-modal">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Atelier de découpe</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <form action="#">
+                                            <label for="fname">Nom:</label>
+                                            <br>
+                                            <input type="text" id="fname" name="fname" placeholder="Nom et Prénom">
+                                            <br>
+                                            <label for="email">Adresse e-mail:</label><br>
+                                            <input type="email" id="email" name="email" placeholder="adress e-mail">
+                                            <br>
+                                            <label for="phone">Numéro de téléphone:</label>
+                                            <br>
+                                            <input type="tel" id="phone" name="phone" placeholder="xx 123 456"
+                                                pattern="[2-9]{1}[0-9]{7}">
+                                            <br>
+                                            <br>
+                                            <!-- pièce jointe -->
+                                            <label for="file">Insérer votre motif à découper:</label>
+                                            <div class="form-group">
+                                                <input type="file" class="form-control-file border" name="file">
+                                            </div>
+                                            <br>
+                                            <input type="submit" value="Submit">
+                                            <input type="reset" value="Reset">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div data-toggle="collapse" id="header-deco3" data-target="#demo3">Autres</div>
-                    <div id="demo3" class="collapse">
-                        Lorem ipsum dolor text....
-                        <button>Exprimez-vous</button>
-                        
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <p class="card-text">Si vous cherchez un modèle spécifique, personalisé ou unique, exprimez vous
+                            ici. Et notre équipe vous contactera.</p>
+                        <a class="btn btn-primary stretched-link" data-toggle="modal"
+                            data-target="#exprimez-vous-modal">Exprimez vous</a>
+                        <!-- The exprimez-vous Modal -->
+                        <div class="modal fade" id="exprimez-vous-modal">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Exprimez-vous</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <form action="#">
+                                            <label for="fname">Nom:</label>
+                                            <br>
+                                            <input type="text" id="fname" name="fname" placeholder="Nom et Prénom">
+                                            <br>
+                                            <label for="email">Adresse e-mail:</label><br>
+                                            <input type="email" id="email" name="email" placeholder="adress e-mail">
+                                            <br>
+                                            <label for="phone">Numéro de téléphone:</label>
+                                            <br>
+                                            <input type="tel" id="phone" name="phone" placeholder="xx 123 456"
+                                                pattern="[2-9]{1}[0-9]{7}">
+                                            <br>
+                                            <!-- pièce jointe -->
+                                            <label for="file">Joindre la photo du modèle à commander:</label>
+                                            <div class="form-group">
+                                                <input type="file" class="form-control-file border" name="file">
+                                            </div>
+                                            <br>
+                                            <textarea name="message" rows="5" cols="40"
+                                                placeholder="votre message ici"></textarea>
+                                            <br>
+                                            <input type="submit" value="Submit">
+                                            <input type="reset" value="Reset">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
         </section>
     </div>
 
@@ -426,11 +448,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+
+    <!-- navbar script -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <!-- navbar script -->
 </body>
 
 
 <!-- Footer -->
-<hr/>
+<hr />
 <footer class="text-center text-lg-start bg-light text-muted">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">

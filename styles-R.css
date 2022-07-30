@@ -6,12 +6,14 @@ body div section {
 }
 
 /* navbar style */
+
 .navbar {
     background-color: white;
     margin: auto;
     width: auto;
     height: fit-content;
     box-shadow: 1px 1px 6px #d3cfc9;
+    z-index: 20;
 }
 
 .navbar a {
@@ -58,64 +60,110 @@ nav div div img {
     padding: 0;
 }
 
+/* navbar collapsible _____________________ */
 
-.navbar-toggler-icon {
-    background-image: url(./data/logo/aligniconjustify-150x150.png);
-}
+@media screen and (min-width: 651px) {
 
-.dropdown .nav-link {
-    margin-right: 0 !important;
-}
-
-@media all and (min-width: 992px) {
-    #navbarNav {
-        background-color: transparent;
+    #mySidenavLogo {
+        display: none;
     }
 
-    .dropdown:hover .dropdown-menu {
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
-        align-items: flex-start;
-        margin-left: -200px;
+    #menu-navbar {
+        display:flex;
+        flex-direction: row;
+    }
+    .closebtn{
+        display: none;
     }
 
-    .dropdown:hover #dropdown-sport {
-        margin: 0px;
+    #menu-navbar-deco {
+        display:none;
     }
 
 }
 
-@media all and (max-width: 992px) {
-    .navbar-toggler {
+@media screen and (max-width: 650px) {
+    .sidenav {
+        height: 100%;
+        width: 0;
         position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
     }
 
-    .navbar-toggler:hover .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
-        align-items: flex-start;
-        margin-left: 0px;
+    .sidenav-deco{
+        position: fixed;
+        right: 0;
+        top: 20px;
+        z-index: 21;
+    }
+    #mySidenavLogo{
+z-index: 21;
     }
 
-    .navbar-collapse {
-        background-color: transparent;
-        display: flex;
-        justify-content: flex-end;
-        text-align: right;
-        width: fit-content !important;
-        max-height: 150px;
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
     }
 
-    .dropdown:hover .dropdown-menu {
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
-        align-items: flex-start;
-        margin-left: 0px;
+    .sidenav a:hover {
+        color: #f1f1f1;
     }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 20px;
+        margin-left: 50px;
+    }
+
+}
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+/* _____________________________________________________ */
+
+#navbarNav {
+    background-color: transparent;
+}
+
+.dropdown:hover .dropdown-menu {
+    background-color: white;
+    color: rgb(34, 34, 34);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 0px;
+}
+
+.dropdown-menu li:hover .dropdown-item {
+    background-color: rgb(131, 131, 131);
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 0;
 }
 
 @media all and (max-width: 595px) {
@@ -125,106 +173,120 @@ nav div div img {
     }
 }
 
-@media all and (max-width: 320px) {}
-
-
-
-
 /* carousel---------------------------------------- */
 /* ________________________________________________________________________________ */
 .container-demo {
     position: relative;
     width: 320px;
+    height: auto;
     margin: 100px auto 0 auto;
     perspective: 1000px;
-  }
-  
-  .carousel-demo {
+}
+
+.carousel-demo {
     position: relative;
     width: 100%;
-    height: 100%;
-    transform-style: preserve-3d; 
+    height: 300px;
+    transform-style: preserve-3d;
     animation: rotate360 60s infinite forwards linear;
-  }
-  .carousel__face { 
+}
+
+.carousel__face {
     position: absolute;
     width: 300px;
-    height: 187px;
-    top: 20px;
+    height: 200px;
+    top: 30px;
     left: 10px;
     right: 10px;
     background-size: cover;
-    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
     display: flex;
-  }
-  
-  span {
+}
+
+.carousel-demo span {
     margin: auto;
-    font-size: 2rem;
-  }
-  
-  
-  .carousel__face:nth-child(1) {
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+}
+
+.carousel__face:nth-child(1) {
     background-image: url(./data/image-carousel/1.jpg);
-    transform: rotateY(  0deg) translateZ(430px); }
-  .carousel__face:nth-child(2) { 
+    transform: rotateY(0deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(2) {
     background-image: url(./data/image-carousel/2.jpg);
-      transform: rotateY( 40deg) translateZ(430px); }
-  .carousel__face:nth-child(3) {
+    transform: rotateY(40deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(3) {
     background-image: url(./data/image-carousel/3.jpg);
-    transform: rotateY( 80deg) translateZ(430px); }
-  .carousel__face:nth-child(4) {
+    transform: rotateY(80deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(4) {
     background-image: url(./data/image-carousel/4.jpg);
-    transform: rotateY(120deg) translateZ(430px); }
-  .carousel__face:nth-child(5) { 
+    transform: rotateY(120deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(5) {
     background-image: url(./data/image-carousel/5.jpg);
-   transform: rotateY(160deg) translateZ(430px); }
-  .carousel__face:nth-child(6) { 
+    transform: rotateY(160deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(6) {
     background-image: url(./data/image-carousel/6.jpg);
-   transform: rotateY(200deg) translateZ(430px); }
-  .carousel__face:nth-child(7) { 
+    transform: rotateY(200deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(7) {
     background-image: url(./data/image-carousel/7.jpg);
-   transform: rotateY(240deg) translateZ(430px); }
-  .carousel__face:nth-child(8) {
+    transform: rotateY(240deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(8) {
     background-image: url(./data/image-carousel/8.jpg);
-    transform: rotateY(280deg) translateZ(430px); }
-  .carousel__face:nth-child(9) {
+    transform: rotateY(280deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(9) {
     background-image: url(./data/image-carousel/9.jpg);
-    transform: rotateY(320deg) translateZ(430px); }
-  
-  
-  
-  @keyframes rotate360 {
+    transform: rotateY(320deg) translateZ(430px);
+}
+
+
+
+@keyframes rotate360 {
     from {
-      transform: rotateY(0deg);
+        transform: rotateY(0deg);
     }
+
     to {
-      transform: rotateY(-360deg);
+        transform: rotateY(-360deg);
     }
-  }
-  
+}
+
 
 /* ___________________________________________________________________________________ */
 
-.main-welcome{
-}
-
-#home-carousel{
+#home-carousel {
     z-index: 1;
     position: relative;
 }
 
-.carousel-bg{
+.carousel-bg {
     /* z-index: 0; */
     /* position: absolute; */
     left: -50px;
     top: -300px;
     opacity: 0.5;
 }
-.carousel-bg img{
-width: 120vw !important;
-height: 600px;
-overflow:hidden;
+
+.carousel-bg img {
+    width: 120vw !important;
+    height: 600px;
+    overflow: hidden;
 }
 
 /* Make the image fully responsive */
@@ -286,7 +348,6 @@ overflow:hidden;
     margin-left: 0;
 }
 
-
 section p span {
     font-family: 'Ceviche One', cursive;
     font-size: 25px;
@@ -300,7 +361,6 @@ section p span {
     margin-top: 40px;
 }
 
-
 .sect-sport div div img {
     background-color: aquamarine;
     height: 50vh;
@@ -313,7 +373,6 @@ section p span {
     border-radius: 20px;
     box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.644);
 }
-
 
 [class^="sect-"] button {
     font-size: 2vw;
@@ -350,8 +409,16 @@ section p span {
     opacity: 1;
 }
 
-
 /* section industrie */
+.modal {
+    width: fit-content;
+    margin: auto;
+}
+
+form {
+    text-align: left;
+}
+
 div div a img {
     width: 100%;
     height: auto;
@@ -392,11 +459,6 @@ div div a img {
 .img-container:hover .middle {
     opacity: 1;
 }
-
-/* .img-container:active .image {
-    transform: scale(2);
-    opacity: 1; 
-} */
 
 .text {
     background-color: #3f4aa88c;
@@ -443,7 +505,12 @@ div div a img {
     font-size: 15px;
 }
 
-/* footer ----------------- */
+.card a {
+    color: white !important;
+    width: 100%;
+}
+
+/* footer -----------______________________________________________________________________________________________------ */
 .footer-class {
     margin-top: 30px;
 }
@@ -469,26 +536,29 @@ footer .tw {
     background-color: blue;
 }
 
-/* boutique sport -------------------------------- */
+/* boutique sport ------------------------------------------------------------------------------------------ */
 .container-fluid .cart img {
-height: 30px;
+    height: 30px;
 }
-@media screen and (max-width: 880px) {
-    .nav-title {
-        display: none;
-    }
-}
+
 
 @media screen and (max-width: 625px) {
-    .nav-title {
+    .navbar-brand {
+        margin-left: 0%;
+    }
+
+    .nav-title1 {
+        /* display: none; */
+        font-size: 25px;
+    }
+
+    .container-fluid .cart h6 {
         display: none;
     }
 
-    .container-fluid .cart h6{
-        display: none;
-    }
     .search {
         height: 30px;
+        display: none;
     }
 }
 
@@ -505,8 +575,8 @@ height: 30px;
     width: auto;
 }
 
-.sport-welcome .carousel-indicators  li.active{
-    box-shadow: 1px 1px 5px rgb(0, 0, 255  );
+.sport-welcome .carousel-indicators li.active {
+    box-shadow: 1px 1px 5px rgb(0, 0, 255);
 }
 
 /* welcome left */
@@ -519,27 +589,28 @@ height: 30px;
 }
 
 .welcome-left div {
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
+    /* background-color: rgb(212, 10, 10); */
+    /* border: 1px solid black; */
     border-radius: 2%;
     color: rgb(99, 97, 97);
+    box-shadow: 5px 5px 20px grey;
     /* border-left: none;
     border-right: none; */
 }
 
-.welcome-left img{
-    width:40px;
+.welcome-left img {
+    width: 40px;
     height: 40px;
 }
 
 /* welcome center */
 
-.sport-welcome .welcome-center .carousel-inner img{
+.sport-welcome .welcome-center .carousel-inner img {
     height: 310px;
     border: none;
 }
 
-.sport-welcome .carousel-indicators  li{
+.sport-welcome .carousel-indicators li {
     height: 5px;
     border-radius: 25%;
     background-color: rgb(230, 230, 230);
@@ -548,15 +619,15 @@ height: 30px;
 /* welcome right */
 
 .welcome-right .carousel-inner {
-    width:100%;
+    width: 100%;
     height: 100%;
     display: flex;
-align-items: center;
+    align-items: center;
 }
 
 .welcome-right img {
     width: 100%;
-    height:auto;
+    height: auto;
 }
 
 .sport-welcome .carousel-indicators {
@@ -572,48 +643,376 @@ align-items: center;
         grid-template-columns: 90%;
         grid-template-rows: auto 200px;
     }
-    
+
     /* welcome left */
     .welcome-left {
-        border: 1px solid black;
+        /* border: 1px solid black; */
         margin: 10px 5px;
         display: grid;
         grid-template-columns: 50% 50%;
     }
-    
+
     .welcome-left div {
         background-color: rgb(255, 255, 255);
-        border: inherit ;
+        box-shadow: 5px 5px 20px grey;
+        margin: 3px;
+        border: inherit;
     }
-    
-    .welcome-left img{
-        width:40px;
+
+    .welcome-left img {
+        width: 40px;
         height: 40px;
     }
-    
+
     /* welcome center */
-    
-    .sport-welcome .welcome-center .carousel-inner img{
+
+    .sport-welcome .welcome-center .carousel-inner img {
         height: 200px;
         border: none;
     }
-    
-    .sport-welcome .carousel-indicators  li{
+
+    .sport-welcome .carousel-indicators li {
         height: 5px;
         border-radius: 25%;
         background-color: rgb(230, 230, 230);
     }
-    
-    .sport-welcome .carousel-indicators  li.active{
-        box-shadow: 1px 1px 5px rgb(0, 0, 255  );
+
+    .sport-welcome .carousel-indicators li.active {
+        box-shadow: 1px 1px 5px rgb(0, 0, 255);
     }
-    
+
     /* welcome right */
-    
+
     .welcome-right .carousel-inner {
         display: none;
     }
-    
+}
 
 
+/* roubrique article _________________________________________ */
+.technical-data {
+    padding-left: 5%
+}
+
+.section-article {
+    background-color: rgb(240, 240, 240);
+}
+
+.add-rem-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.btn-plus-moins {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.ico {
+    width: 40px;
+    height: 40px;
+    align-self: flex-end;
+}
+
+.add {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(149, 255, 100);
+    transform: rotate(90deg);
+    border: none;
+    border-radius: 25%;
+    color: white;
+    margin: 0 3px 2px 0;
+}
+
+.rem {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(233, 129, 122);
+    border: none;
+    border-radius: 25%;
+    color: white;
+    font-weight: bold;
+    transform: rotate(90deg);
+    margin: 2px 3px 0px 0px;
+
+}
+
+.qte {
+    width: 44px;
+    height: 44px;
+    background-color: rgb(200, 211, 214);
+    border: none;
+    border-radius: 25%;
+    color: white;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.ajouter {
+    border: none;
+    background-color: rgb(0, 209, 0);
+    color: white;
+    border-radius: 5%;
+    margin-left: 10px;
+    box-shadow: 1px 1px 3px 3px grey;
+}
+
+/* min 768-------------------------------------- */
+@media screen and (min-width:768px) {
+    .partie {
+        border-top: 1px rgb(0, 0, 151) solid;
+    }
+
+    .zoom:hover {
+        transform: scale(1.5);
+        z-index: 100;
+        /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+
+    .section-article {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        /* background-color: grey; */
+    }
+
+    .section-article .titre-section {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .section-article .image-produit {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .section-article>div>img {
+        max-height: 350px;
+        width: inherit !important;
+        border-radius: 15%;
+        box-shadow: 1px 1px 3px 3px grey;
+
+    }
+
+    .titre-section {
+        text-align: top center;
+    }
+
+    .technical-data {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .technical-data div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .technical-data h5 {
+        font-size: medium;
+        padding-left: 20px;
+    }
+
+    .technical-data h4 {
+        font-size: large;
+        color: rgb(0, 0, 129);
+        width: max-content;
+        padding-left: 5%;
+        display: flex;
+        justify-content: left;
+    }
+
+}
+
+/* max 768px--------------------------------------- */
+
+@media screen and (max-width:768px) {
+    .section-article {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    .section-article .titre-section {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .section-article .image-produit {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-article>div>img {
+        max-height: 350px;
+        width: inherit !important;
+        border-radius: 15%;
+        box-shadow: 1px 1px 3px 3px grey;
+
+    }
+
+    .titre-section {
+        text-align: top center;
+    }
+
+    .technical-data {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .technical-data>div>div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0;
+    }
+
+    .technical-data>div>div {
+        margin: 5px;
+    }
+
+    .technical-data h5 {
+        font-size: medium;
+    }
+
+    .technical-data h4 {
+        font-size: large;
+        color: blue;
+        width: max-content;
+        padding-left: 5%;
+        display: flex;
+        justify-content: left;
+    }
+
+}
+
+/* boutique deco _______________________________________________________________ */
+
+.deco-welcome {
+    /* background-color: yellowgreen; */
+    display: flex;
+    height: auto;
+}
+
+.deco-welcome-left {
+    z-index: 1;
+    width: 70%;
+    margin: auto;
+}
+
+.deco-welcome-left img {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 2%;
+}
+
+.deco-welcome-right {
+    /* background-color: blue; */
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.deco-welcome-right-top {
+    /* background-color: rgb(43, 108, 119); */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 5px;
+
+}
+
+.deco-welcome-right-top img {
+    height: fit-content;
+    width: auto;
+    max-width: 100%;
+    border-radius: 2%;
+}
+
+.deco-welcome-right-bottom {
+    /* background-color: rgb(89, 0, 255); */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 5px;
+}
+
+.deco-welcome-right-bottom img {
+    height: fit-content;
+    width: auto;
+    max-width: 100%;
+    border-radius: 2%;
+}
+
+.hide {
+    display: none;
+}
+.hide-r {
+    display: none;
+}
+
+.deco-welcome-left:hover .hide {
+    display:inline-block;
+    z-index: 2;
+    position: relative;
+    bottom: 50px;
+    left: 50px;
+    width: 50%;
+    background-color: rgba(128, 0, 122, 0.479);
+    color: white;
+}
+
+.deco-welcome-right:hover .hide-r {
+    display:inline-block;
+    z-index: 2;
+    position: relative;
+    bottom: 50%;
+    left: 10%;
+    width: 70%;
+    background-color: rgba(128, 126, 0, 0.479);
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .deco-welcome {
+        height: auto;
+    }
+
+    .deco-welcome-left {
+        height: auto
+    }
+
+    .deco-welcome-left img {
+        width: 100%;
+        height: auto;
+        border-radius: 2%;
+    }
+
+    .deco-welcome-right {
+        display: none;
+    }
 }

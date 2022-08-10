@@ -435,6 +435,7 @@ div div a img {
     width: 100%;
     height: auto;
     transition: .5s ease;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -444,8 +445,8 @@ div div a img {
     position: absolute;
     top: 50%;
     left: 50%;
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%)
 }
 
 .img-container:hover .image {
@@ -539,6 +540,10 @@ footer .tw {
 /* boutique sport ------------------------------------------------------------------------------------------ */
 .container-fluid .cart img {
     height: 30px;
+}
+
+#Cart-Sport-Table , th ,td{
+border: 1px black solid;
 }
 
 
@@ -689,7 +694,7 @@ footer .tw {
 }
 
 
-/* roubrique article _________________________________________ */
+/* rubrique article _________________________________________ */
 .technical-data {
     padding-left: 5%
 }
@@ -767,7 +772,7 @@ footer .tw {
     }
 
     .zoom:hover {
-        transform: scale(1.5);
+        transform: scale(1.2);
         z-index: 100;
         /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
     }

@@ -17,7 +17,6 @@
 
 
 <body>
-
     <!-- Navbar ____________________________________________________________-->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
@@ -35,37 +34,88 @@
             </form>
 
 
-            <div class="cart">
+            <div class="cart btn stretched-link" data-toggle="modal" data-target="#sport-cart-modal"
+                data-backdrop="false">
                 <img src="./data/logo/cart-icon.png">
                 <h6>Total Achat:</h6>
             </div>
             <div class="form-inline">
-                <div>0</div>
+                <div id="sport-cart-total">0</div>
                 <div>TND</div>
             </div>
         </div>
+
+
+        <!-- SPORT CART MODAL -->
+        <div class="modal fade" id="sport-cart-modal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Chariot sport (contient : <span id="total-modal">0</span>Dt)</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div>
+                            <table id="Cart-Sport-Table" style="width:100%; ">
+                                <tr style="border: 2px solid black;background-color: rgba(128, 128, 128, 0.534);">
+                                    <th>Article</th>
+                                    <th>Qté</th>
+                                    <th>P.U</th>
+                                    <th>Total</th>
+                                    <th>Annuler</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <form action="#">
+                            <label for="fname">Nom:</label>
+                            <br>
+                            <input type="text" id="fname" name="fname" placeholder="Nom et Prénom">
+                            <br>
+                            <label for="email">Adresse e-mail:</label><br>
+                            <input type="email" id="email" name="email" placeholder="adress e-mail">
+                            <br>
+                            <label for="phone">Numéro de téléphone:</label>
+                            <br>
+                            <input type="tel" id="phone" name="phone" placeholder="xx 123 456"
+                                pattern="[2-9]{1}[0-9]{7}">
+                            <br>
+                            <label for="flivraison">Adresse de livraison:</label>
+                            <br>
+                            <input type="text" id="flivraison" name="flivraison" placeholder="adresse">
+                            <br>
+                            <input type="submit" value="Envoyer la commande">
+                            <input type="reset" value="Reset">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
+
     <!-- fin de NAVBAR __________________________________________________________ -->
+
 
 
     <!-- panneau publicitaire WELCOME _____________________________________ -->
     <section class="sport-welcome">
         <div class="welcome-left">
-            <div>
+            <div><a href="#article1">
                 <img src="./data/image-sport/boutique-sport/carousel-boutique/icon-banc-et-support.webp">
-                Banc ajustable et support barre
+                Banc ajustable et support barre</a>
             </div>
-            <div>
+            <div><a href="#article2">
                 <img src="./data/image-sport/boutique-sport/carousel-boutique/icon-chaise-romaine.jpg">
-                Chaise romaine
+                Chaise romaine</a>
             </div>
-            <div>
+            <div><a href="#article3">
                 <img src="./data/image-sport/boutique-sport/carousel-boutique/pull-up.webp">
-                Barre Fixe
+                Barre Fixe</a>
             </div>
-            <div>
+            <div><a href="#article4">
                 <img src="./data/image-sport/boutique-sport/carousel-boutique/icon-banc-plat2.jpg">
-                Banc Plat
+                Banc Plat</a>
             </div>
         </div>
         <div id="welcome-carousel" class="carousel slide welcome-center" data-ride="carousel">
@@ -140,9 +190,9 @@
 
 
     <!-- image de la boutique partie 1 -->
-    <section class="section-article">
+    <section class="section-article" id="article1">
         <div class="titre-section">
-            <h4>BANC AJUSTABLE ET SUPPORT BARRE</h4>
+            <h4 class="nom-produit">BANC AJUSTABLE ET SUPPORT BARRE</h4>
             <p>Ce banc polyvalent a une forme simple et compacte spécialement conçue pour les entraînements à la barre
                 et aux haltères. Il est facile à ranger et à déplacer, même à la maison, grâce aux roues et aux poignées
                 intégrées.</p>
@@ -151,157 +201,128 @@
             <img class="zoom" src="./data/image-sport/banc-ajustable-2.jpg">
             <!-- partie commune -->
             <div>
-                <p class="card-text">Prix unitaire TTC : <strong class="PUTTC">270</strong> DT</p>
+                <p class="card-text">Prix unitaire TTC : <span class="PUTTC">270</span> DT</p>
                 <div class="add-rem-btn">
                     <div class="btn-plus-moins">
-                    <button class="add">&#60</button>
-                    <button class="rem">&#62</button>
+                        <button class="add">&#60</button>
+                        <button class="rem">&#62</button>
                     </div>
                     <button class="qte">0</button>
-                    <a> <img class="ico" src="./data/logo/empty-heart-ico.jpeg"></a>
+                    <a> <img class="ico" src="./data/logo/empty-heart-ico.png"></a>
                     <button class="ajouter">Ajouter au chariot</button>
                 </div>
             </div>
         </div>
         <div class="technical-data">
             <h3>Détails de la commande:</h3>
-
             <div class="partie">
-                <form>
-                    <input type="checkbox" id="banc-ajustable1" name="banc-ajustable" value="banc-ajustable">
-                    <label for="banc-ajustable">
-                        <h4>Banc Ajustable:</h4>
-                    </label>
-                </form>
                 <div>
                     <div>
-                        <h5>Couleur du semi-cuir:</h5>
-                        <form>
-                            <input type="radio" id="rouge" name="couleur-mousse" value="rouge">
-                            <label for="rouge" style="color: red;">Rouge</label><br>
-                            <input type="radio" id="noir" name="couleur-mousse" value="noir">
-                            <label for="noir">Noir</label><br>
+                        <h5>Couleur:</h5>
+                        <form class="couleur">
+                            <input type="radio" id="noir-ar1" name="couleur" value="noir" checked="checked"
+                                class="noir">
+                            <label for="noir">Noir (Standard)</label><br>
+                            <input type="radio" id="rouge-ar1" name="couleur" value="rouge" class="rouge">
+                            <label for="rouge">Rouge</label><br>
                         </form>
                     </div>
                     <div>
-                        <h5>Taille de la structure:</h5>
-                        <form>
-                            <input type="radio" id="carre40" name="couleur-mousse" value="tc40">
-                            <label for="tc40">Tube carré 40mm</label><br>
-                            <input type="radio" id="carre50" name="couleur-mousse" value="tc50">
-                            <label for="tc50">Tube carré 50mm</label><br>
+                        <h5>Epaisseur Acier:</h5>
+                        <form class="epaisseur">
+                            <input type="radio" id="ep15-ar1" name="epaisseur" value="15" checked="checked"
+                                class="ep15">
+                            <label for="tc40">1,5mm (semi-pro Standard)</label><br>
+                            <input type="radio" id="ep30-ar1" name="epaisseur" value="30" class="ep30">
+                            <label for="tc50">3mm (professionnelle)</label><br>
+                        </form>
+                    </div>
+                    <div>
+                        <h5>Qualité Peinture:</h5>
+                        <form class="peinture">
+                            <input type="radio" id="epoxy-ar1" name="peinture" value="epoxy" checked="checked"
+                                class="pepoxy">
+                            <label for="tc40">Normale (Standard)</label><br>
+                            <input type="radio" id="normale-ar1" name="peinture" value="normale" class="pnormal">
+                            <label for="tc50">Epoxy à chaud</label><br>
                         </form>
                     </div>
                 </div>
             </div>
-
-            <div class="partie">
-                <form>
-                    <input type="checkbox" id="support-barre" name="support-barre" value="support-barre">
-                    <label for="support-barre">
-                        <h4>Support barre:</h4>
-                    </label>
-                </form>
-                <div>
-                    <div>
-                        <h5>Hauteur du support:</h5>
-                        <form>
-                            <input type="radio" id="h150" name="couleur-mousse" value="hauteur150">
-                            <label for="hauteur150">1,5 m</label><br>
-                            <input type="radio" id="h200" name="couleur-mousse" value="hauteur200">
-                            <label for="hauteur200">2 m</label><br>
-                        </form>
-                    </div>
-                    <div>
-                        <h5>Repose barre extra:</h5>
-                        <form>
-                            <input type="checkbox" id="extra-repose-barre" name="extra-repose-barre" value="extra-repose-barre">
-                            <label for="extra-repose-barre">Je veux un pair de repose barre en extra</label><br>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <button class="valider-article">Valider</button>
         </div>
     </section>
     <!-- FIN image de la boutique partie 1 -->
 
     <!-- image de la boutique partie 2 -->
-    <section class="section-article">
+    <section class="section-article" id="article2">
         <div class="titre-section">
-            <h4>CHAISE ROMAINE</h4>
-            <p>Ultra polyvalente, idéale pour compléter votre home gym. Très utilisée pour muscler le haut du corps et pour favoriser, la perte de poids, cette tour de musculation est l'occasion d'un entraînement musculaire complet et varié. Découvrez maintenant la chaise romaine, pour un home gym ambitieux. </p>
+            <h4 class="nom-produit">CHAISE ROMAINE</h4>
+            <p>Ultra polyvalente, idéale pour compléter votre home gym. Très utilisée pour muscler le haut du corps et
+                pour favoriser, la perte de poids, cette tour de musculation est l'occasion d'un entraînement musculaire
+                complet et varié. Découvrez maintenant la chaise romaine, pour un home gym ambitieux. </p>
         </div>
         <div class="image-produit">
             <img class="zoom" src="./data/image-sport/boutique-sport/chaise-romaine.jpg">
             <!-- partie commune -->
             <div>
-                <p class="card-text">Prix unitaire TTC : <strong class="PUTTC">270</strong> DT</p>
+                <p class="card-text">Prix unitaire TTC : <strong class="PUTTC">500</strong> DT</p>
                 <div class="add-rem-btn">
                     <div class="btn-plus-moins">
                         <button class="add">&#60</button>
                         <button class="rem">&#62</button>
-                        </div>
-                        <button class="qte">0</button>
-                        <a> <img class="ico" src="./data/logo/empty-heart-ico.jpeg"></a>
-                        <button class="ajouter">Ajouter au chariot</button>
+                    </div>
+                    <button class="qte">0</button>
+                    <a> <img class="ico" src="./data/logo/empty-heart-ico.png"></a>
+                    <button class="ajouter">Ajouter au chariot</button>
                 </div>
             </div>
         </div>
         <div class="technical-data">
             <h3>Détails de la commande:</h3>
-
             <div class="partie">
-                <form>
-                    <input type="checkbox" id="banc-ajustable1" name="banc-ajustable" value="banc-ajustable">
-                    <label for="banc-ajustable">
-                        <h4>Chaise Romaine:</h4>
-                    </label>
-                </form>
                 <div>
                     <div>
-                        <h5>Couleur du semi-cuir:</h5>
-                        <form>
-                            <input type="radio" id="rouge" name="couleur-mousse" value="rouge">
-                            <label for="rouge" style="color: red;">Rouge</label><br>
-                            <input type="radio" id="noir" name="couleur-mousse" value="noir">
-                            <label for="noir">Noir</label><br>
+                        <h5>Couleur:</h5>
+                        <form class="couleur">
+                            <input type="radio" id="noir-ar2" name="couleur" value="noir" checked="checked"
+                                class="noir">
+                            <label for="noir">Noir (Standard)</label><br>
+                            <input type="radio" id="rouge-ar2" name="couleur" value="rouge" class="rouge">
+                            <label for="rouge">Rouge</label><br>
                         </form>
                     </div>
                     <div>
-                        <h5>Taille de la structure:</h5>
-                        <form>
-                            <input type="radio" id="carre40" name="couleur-mousse" value="tc40">
-                            <label for="tc40">Tube carré 40mm</label><br>
-                            <input type="radio" id="carre50" name="couleur-mousse" value="tc50">
-                            <label for="tc50">Tube carré 50mm</label><br>
+                        <h5>Epaisseur Acier:</h5>
+                        <form class="epaisseur">
+                            <input type="radio" id="ep15-ar2" name="epaisseur" value="15" checked="checked"
+                                class="ep15">
+                            <label for="tc40">1,5mm (semi-pro Standard)</label><br>
+                            <input type="radio" id="ep30-ar2" name="epaisseur" value="30" class="ep30">
+                            <label for="tc50">3mm (professionnelle)</label><br>
                         </form>
                     </div>
                     <div>
-                        <h5>Hauteur du support:</h5>
-                        <form>
-                            <input type="radio" id="h250" name="hauteur250" value="hauteur250">
-                            <label for="hauteur250">2,5 m</label><br>
-                            <input type="radio" id="h200" name="hauteur150" value="hauteur200">
-                            <label for="hauteur200">2 m</label><br>
-                        </form>
-                    </div>
-                    <div>
-                        <h5>Options:</h5>
-                        <form>
-                            <input type="checkbox" id="chaise-roues" name="roues" value="roues">
-                            <label for="roues">Je veux ajouter des roues pour la déplacer</label><br>
+                        <h5>Qualité Peinture:</h5>
+                        <form class="peinture">
+                            <input type="radio" id="epoxy-ar2" name="peinture" value="epoxy" checked="checked"
+                                class="pepoxy">
+                            <label for="tc40">Normale (Standard)</label><br>
+                            <input type="radio" id="normale-ar2" name="peinture" value="normale" class="pnormal">
+                            <label for="tc50">Epoxy à chaud</label><br>
                         </form>
                     </div>
                 </div>
             </div>
+            <button class="valider-article">Valider</button>
         </div>
     </section>
     <!-- FIN image de la boutique partie 2 -->
 
     <!-- image de la boutique partie 3 -->
-    <section class="section-article">
+    <section class="section-article" id="article3">
         <div class="titre-section">
-            <h4>BARRE FIXE</h4>
+            <h4 class="nom-produit">BARRE FIXE</h4>
             <p>Cette barre de traction est fabriquée en acier robuste et a une capacité de poids de 125 Kg.
                 Elle est très solide et très durable.
                 C'est l'une des meilleures barres de traction que vous puissiez trouver en Tunisie.</p>
@@ -315,64 +336,63 @@
                     <div class="btn-plus-moins">
                         <button class="add">&#60</button>
                         <button class="rem">&#62</button>
-                        </div>
-                        <button class="qte">0</button>
-                        <a> <img class="ico" src="./data/logo/empty-heart-ico.jpeg"></a>
-                        <button class="ajouter">Ajouter au chariot</button>
+                    </div>
+                    <button class="qte">0</button>
+                    <a> <img class="ico" src="./data/logo/empty-heart-ico.png""></a>
+                        <button class=" ajouter">Ajouter au chariot</button>
                 </div>
             </div>
         </div>
         <div class="technical-data">
             <h3>Détails de la commande:</h3>
-
             <div class="partie">
-                <form>
-                    <input type="checkbox" id="banc-ajustable1" name="banc-ajustable" value="banc-ajustable">
-                    <label for="banc-ajustable">
-                        <h4>Barre Fixe:</h4>
-                    </label>
-                </form>
                 <div>
                     <div>
-                        <h5>Couleur du semi-cuir:</h5>
-                        <form>
-                            <input type="radio" id="rouge" name="couleur-mousse" value="rouge">
-                            <label for="oculeur
-                            " style="color: red;">Rouge</label><br>
-                            <input type="radio" id="noir" name="couleur-mousse" value="noir">
-                            <label for="noir">Noir</label><br>
+                        <h5>Couleur:</h5>
+                        <form class="couleur">
+                            <input type="radio" id="noir-ar3" name="couleur" value="noir" checked="checked"
+                                class="noir">
+                            <label for="noir">Noir (Standard)</label><br>
+                            <input type="radio" id="rouge-ar3" name="couleur" value="rouge" class="rouge">
+                            <label for="rouge">Rouge</label><br>
                         </form>
                     </div>
                     <div>
-                        <h5>Taille de la structure:</h5>
-                        <form>
-                            <input type="radio" id="carre40" name="couleur-mousse" value="tc40">
-                            <label for="tc">Tube carré 40mm</label><br>
-                            <input type="radio" id="carre50" name="couleur-mousse" value="tc50">
-                            <label for="tc">Tube carré 50mm</label><br>
+                        <h5>Epaisseur Acier:</h5>
+                        <form class="epaisseur">
+                            <input type="radio" id="ep15-ar3" name="epaisseur" value="15" checked="checked"
+                                class="ep15">
+                            <label for="tc40">1,5mm (semi-pro Standard)</label><br>
+                            <input type="radio" id="ep30-ar3" name="epaisseur" value="30" class="ep30">
+                            <label for="tc50">3mm (professionnelle)</label><br>
                         </form>
                     </div>
                     <div>
-                        <h5>Hauteur du support:</h5>
-                        <form>
-                            <input type="radio" id="h250" name="hauteur250" value="hauteur250">
-                            <label for="hauteur">2,5 m</label><br>
-                            <input type="radio" id="h200" name="hauteur150" value="hauteur200">
-                            <label for="hauteur">2 m</label><br>
+                        <h5>Qualité Peinture:</h5>
+                        <form class="peinture">
+                            <input type="radio" id="epoxy-ar3" name="peinture" value="epoxy" checked="checked"
+                                class="pepoxy">
+                            <label for="tc40">Normale (Standard)</label><br>
+                            <input type="radio" id="normale-ar3" name="peinture" value="normale" class="pnormal">
+                            <label for="tc50">Epoxy à chaud</label><br>
                         </form>
                     </div>
                 </div>
             </div>
+            <button class="valider-article">Valider</button>
         </div>
     </section>
     <!-- FIN image de la boutique partie 3 -->
 
 
     <!-- image de la boutique partie 4 -->
-    <section class="section-article">
+    <section class="section-article" id="article4">
         <div class="titre-section">
-            <h4>BANC PLAT</h4>
-            <p>Ce banc d’entraînement multiple peut vous fournir une variété d’exercices, idéal pour les boucles de biceps, le développé couché, le pressé sur les épaules, la musculation abdominale, les exercices de jambes et bien plus encore. C'est un excellent appareil pour un entraînement complet du corps à la maison ou au gymnase.</p>
+            <h4 class="nom-produit">BANC PLAT</h4>
+            <p>Ce banc d’entraînement multiple peut vous fournir une variété d’exercices, idéal pour les boucles de
+                biceps, le développé couché, le pressé sur les épaules, la musculation abdominale, les exercices de
+                jambes et bien plus encore. C'est un excellent appareil pour un entraînement complet du corps à la
+                maison ou au gymnase.</p>
         </div>
         <div class="image-produit">
             <img class="zoom" src="./data/image-sport/boutique-sport/carousel-boutique/banc-plat.webp">
@@ -383,60 +403,50 @@
                     <div class="btn-plus-moins">
                         <button class="add">&#60</button>
                         <button class="rem">&#62</button>
-                        </div>
-                        <button class="qte">0</button>
-                        <a> <img class="ico" src="./data/logo/empty-heart-ico.jpeg"></a>
-                        <button class="ajouter">Ajouter au chariot</button>
+                    </div>
+                    <button class="qte">0</button>
+                    <a> <img class="ico" src="./data/logo/empty-heart-ico.png""></a>
+                        <button class=" ajouter">Ajouter au chariot</button>
                 </div>
             </div>
         </div>
         <div class="technical-data">
             <h3>Détails de la commande:</h3>
-
             <div class="partie">
-                <form>
-                    <input type="checkbox" id="banc-ajustable1" name="banc-ajustable" value="banc-ajustable">
-                    <label for="banc-ajustable">
-                        <h4>Banc Plat:</h4>
-                    </label>
-                </form>
                 <div>
                     <div>
-                        <h5>Couleur du semi-cuir:</h5>
-                        <form>
-                            <input type="radio" id="rouge" name="couleur-mousse" value="rouge">
-                            <label for="rouge" style="color: red;">Rouge</label><br>
-                            <input type="radio" id="noir" name="couleur-mousse" value="noir">
-                            <label for="noir">Noir</label><br>
+                        <h5>Couleur:</h5>
+                        <form class="couleur">
+                            <input type="radio" id="noir-ar4" name="couleur" value="noir" checked="checked"
+                                class="noir">
+                            <label for="noir">Noir (Standard)</label><br>
+                            <input type="radio" id="rouge-ar4" name="couleur" value="rouge" class="rouge">
+                            <label for="rouge">Rouge</label><br>
                         </form>
                     </div>
                     <div>
-                        <h5>Taille de la structure:</h5>
-                        <form>
-                            <input type="radio" id="carre40" name="tubecarre" value="tc40">
-                            <label for="tc40">Tube carré 40mm</label><br>
-                            <input type="radio" id="carre50" name="tubecarre" value="tc50">
-                            <label for="tc50">Tube carré 50mm</label><br>
+                        <h5>Epaisseur Acier:</h5>
+                        <form class="epaisseur">
+                            <input type="radio" id="ep15-ar4" name="epaisseur" value="15" checked="checked"
+                                class="ep15">
+                            <label for="tc40">1,5mm (semi-pro Standard)</label><br>
+                            <input type="radio" id="ep30-ar4" name="epaisseur" value="30" class="ep30">
+                            <label for="tc50">3mm (professionnelle)</label><br>
                         </form>
                     </div>
                     <div>
-                        <h5>Longueur du banc:</h5>
-                        <form>
-                            <input type="radio" id="h250" name="hauteur" value="hauteur250">
-                            <label for="hauteur">12 m</label><br>
-                            <input type="radio" id="h200" name="hauteur" value="hauteur200">
-                            <label for="hauteur">1,2 m</label><br>
-                        </form>
-                    </div>
-                    <div>
-                        <h5>Options:</h5>
-                        <form>
-                            <input type="checkbox" id="chaise-roues" name="roues" value="roues">
-                            <label for="roues">Je veux ajouter des roues pour la déplacer</label><br>
+                        <h5>Qualité Peinture:</h5>
+                        <form class="peinture">
+                            <input type="radio" id="epoxy-ar4" name="peinture" value="epoxy" checked="checked"
+                                class="pepoxy">
+                            <label for="tc40">Normale (Standard)</label><br>
+                            <input type="radio" id="normale-ar4" name="peinture" value="normale" class="pnormal">
+                            <label for="tc50">Epoxy à chaud</label><br>
                         </form>
                     </div>
                 </div>
             </div>
+            <button class="valider-article">Valider</button>
         </div>
     </section>
     <!-- FIN image de la boutique partie 4 -->
@@ -456,6 +466,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="./javascript.js"></script>
 </body>
 
 <!-- Footer -->
@@ -519,13 +530,13 @@
                         Quick links
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Boutique sport</a>
+                        <a href="./boutique.html" class="text-reset">Boutique sport</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Boutique déco</a>
+                        <a href="./boutique-deco.html" class="text-reset">Boutique déco</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Contact us</a>
+                        <a href="#" class="text-reset">Contact us</a>
                     </p>
                 </div>
                 <!-- Grid column -->

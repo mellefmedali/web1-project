@@ -93,12 +93,8 @@ for (let i=0; i<plus1.length;i++){
     ToCart[i].onclick = function() {TotalCart()}
     function TotalCart(){
         if (q>0){
-        console.log("valtotP", valtotP)
-        console.log("PAUTTC", PAUTTC[i].innerHTML)
         valtotP += (q * Number(PAUTTC[i].innerHTML))
-        console.log("valtotP", valtotP)
         document.getElementById("sport-cart-total").innerHTML = valtotP
-        console.log("produit: ", Article[i].innerHTML)
 
         var table = document.getElementById("Cart-Sport-Table");
         var row = table.insertRow(-1);
@@ -120,8 +116,13 @@ for (let i=0; i<plus1.length;i++){
     function deleteRow(r) {
         var itemp = r.parentNode.parentNode.rowIndex
         var subval = Number(document.getElementById("Cart-Sport-Table").rows[itemp].cells[3].innerHTML)
+        console.log("r", r,)
+        console.log("itemp", itemp)
+        console.log("sybval", subval)
         valtotP -= subval
-        document.getElementById("Sport-cart-total").innerHTML = valtotP
+        console.log("valtotp", valtotP)
+
+        document.getElementById("sport-cart-total").innerHTML = valtotP
         document.getElementById("total-modal").innerHTML = valtotP
         document.getElementById("Cart-Sport-Table").deleteRow(itemp)
     }

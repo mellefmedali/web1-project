@@ -122,7 +122,6 @@ for (let i=0; i<plus1.length;i++){
         document.getElementById("total-modal").innerHTML = valtotP
         document.getElementById("Cart-Deco-Table").deleteRow(itemp)
     }
-
 }
 
 
